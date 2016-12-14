@@ -80,7 +80,6 @@ draw_set_font(font_roomgui);
 
 draw_text(x, y, "Hit Red Wall");
 draw_rectangle(x, y+64, x+128, y+128, true);
-if (associatedAction != undefined) draw_text(x, y+64, associatedAction);
 </string>
           </argument>
         </arguments>

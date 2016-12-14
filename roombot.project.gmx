@@ -15,6 +15,7 @@
       <sprite>sprites\spr_wall_green</sprite>
       <sprite>sprites\spr_wall_blue</sprite>
       <sprite>sprites\spr_floor</sprite>
+      <sprite>sprites\spr_corner_sides</sprite>
     </sprites>
     <sprites name="room gui">
       <sprite>sprites\spr_turnleft</sprite>
@@ -22,8 +23,15 @@
       <sprite>sprites\spr_turnaround</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_wall_sprite.gml</script>
+    <script>scripts\scr_corner_color_check.gml</script>
+    <script>scripts\scr_corner_draw.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_roomgui</font>
   </fonts>
@@ -32,9 +40,13 @@
     <objects name="walls">
       <object>objects\obj_wall_default</object>
       <object>objects\obj_wall_red</object>
+      <object>objects\obj_wall_green</object>
+      <object>objects\obj_wall_blue</object>
+      <object>objects\object15</object>
     </objects>
     <objects name="room obstacles">
       <object>objects\obj_couch</object>
+      <object>objects\object16</object>
     </objects>
     <objects name="room gui">
       <object>objects\obj_action_turnleft</object>
@@ -49,7 +61,10 @@
     <object>objects\obj_controller_room</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room3</room>
+    <room>rooms\room_walltest</room>
     <room>rooms\room_level0</room>
+    <room>rooms\room_prev</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
