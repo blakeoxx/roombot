@@ -26,8 +26,6 @@ if (corner != "default") {
         //Draw Horizontal Sprite
         draw_sprite_ext( spr_corner_sides, 0, x + 32, y + 32, 1, 1, 270, horizSideColor, 1 );
     }
-    
-    show_debug_message("corner = " + corner + "vertSideColor = " + string(vertSideColor) + "horizSideColor = " + string(horizSideColor));
 } else {
 sprite_index = spr_wall_default;
 }

@@ -64,31 +64,36 @@ draw_set_font(font_roomgui);
 eventListX = 768;
 eventListY = 128;
 eventCount = 0;
-instance_create(eventListX, eventListY+(eventCount*128), obj_event_movestart);
+instance_create(eventListX, eventListY+(eventCount*96), obj_event_movestart);
 eventCount++;
 if (instance_number(obj_wall_default) &gt; 0)
 {
-    instance_create(eventListX, eventListY+(eventCount*128), obj_event_wallhit_default);
+    instance_create(eventListX, eventListY+(eventCount*96), obj_event_wallhit_default);
     eventCount++;
 }
 if (instance_number(obj_wall_red) &gt; 0)
 {
-    instance_create(eventListX, eventListY+(eventCount*128), obj_event_wallhit_red);
+    instance_create(eventListX, eventListY+(eventCount*96), obj_event_wallhit_red);
     eventCount++;
 }
 if (instance_number(obj_wall_green) &gt; 0)
 {
-    instance_create(eventListX, eventListY+(eventCount*128), obj_event_wallhit_green);
+    instance_create(eventListX, eventListY+(eventCount*96), obj_event_wallhit_green);
     eventCount++;
 }
 if (instance_number(obj_wall_blue) &gt; 0)
 {
-    instance_create(eventListX, eventListY+(eventCount*128), obj_event_wallhit_blue);
+    instance_create(eventListX, eventListY+(eventCount*96), obj_event_wallhit_blue);
     eventCount++;
 }
 if (instance_number(obj_couch) &gt; 0)
 {
-    instance_create(eventListX, eventListY+(eventCount*128), obj_event_obshit_couch);
+    instance_create(eventListX, eventListY+(eventCount*96), obj_event_obshit_couch);
+    eventCount++;
+}
+if (instance_number(obj_plant) &gt; 0)
+{
+    instance_create(eventListX, eventListY+(eventCount*96), obj_event_obshit_plant);
     eventCount++;
 }
 </string>
