@@ -27,6 +27,14 @@
             <kind>1</kind>
             <string>moveStarted = false;
 global.activeEvent = undefined;
+
+for (tileX = 0; tileX &lt; 1280; tileX += 64) {
+    for(tileY = 0; tileY &lt; 640; tileY += 64) {
+        if (place_empty(tileX, tileY)) {
+            instance_create(tileX, tileY, obj_floor);
+        }
+    }  
+}
 </string>
           </argument>
         </arguments>

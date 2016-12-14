@@ -141,8 +141,6 @@
     <instance objName="obj_wall_red" x="64" y="256" name="inst_0112C7DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="128" y="256" name="inst_2D0702B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="128" y="192" name="inst_0BF84808" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_green" x="1024" y="192" name="inst_B26AA732" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_green" x="960" y="192" name="inst_B90E51CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_blue" x="832" y="512" name="inst_413380F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_blue" x="896" y="512" name="inst_EE4251F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_blue" x="1024" y="512" name="inst_6180254B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -162,7 +160,9 @@
     <instance objName="obj_couch" x="640" y="192" name="inst_26F584C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_couch" x="640" y="256" name="inst_4E2A0CC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_couch" x="640" y="320" name="inst_63506EC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_green" x="896" y="192" name="inst_033CA954" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_red" x="896" y="192" name="inst_443FC4E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_red" x="960" y="192" name="inst_A0C3DF3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_red" x="1024" y="192" name="inst_810CFD18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="192" y="192" w="64" h="64" xo="448" yo="128" id="10000355" name="inst_289D68CE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
