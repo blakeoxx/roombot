@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>startingDirection = "up";
+targetDirection = 0;
+moveSpeed = 5;
+turnSpeed = 10;
 </string>
           </argument>
         </arguments>
@@ -54,6 +57,54 @@
     else if (startingDirection == "up") direction = 90;
     else if (startingDirection == "left") direction = 180;
     else direction = 270;
+    targetDirection = direction;
+    speed = 0;
+}
+else if (direction != targetDirection)
+{
+    speed = 0;
+    if (abs(direction - targetDirection) &lt;= turnSpeed)
+    {
+        // Normalize the target direction
+        targetDirection = targetDirection % 360;
+        if (targetDirection &lt; 0) targetDirection += 360;
+        
+        direction = targetDirection;
+    }
+    else if (targetDirection &gt; direction) direction += turnSpeed;
+    else if (targetDirection &lt; direction) direction -= turnSpeed;
+}
+else
+{
+    speed = moveSpeed;
+    nextx = x;
+    nexty = y;
+    if (direction == 0) nextx += speed;
+    else if (direction == 90) nexty -= speed;
+    else if (direction == 180) nextx -= speed;
+    else nexty += speed;
+    
+    if (place_meeting(nextx, nexty, obj_wall_default))
+    {
+        speed = 0;
+        if (obj_event_wallhit_default.associatedAction == "turnleft") targetDirection = direction + 90;
+        else if (obj_event_wallhit_default.associatedAction == "turnright") targetDirection = direction - 90;
+        else if (obj_event_wallhit_default.associatedAction == "turnaround") targetDirection = direction + 180;
+    }
+    else if (place_meeting(nextx, nexty, obj_wall_red))
+    {
+        speed = 0;
+        if (obj_event_wallhit_red.associatedAction == "turnleft") targetDirection = direction + 90;
+        else if (obj_event_wallhit_red.associatedAction == "turnright") targetDirection = direction - 90;
+        else if (obj_event_wallhit_red.associatedAction == "turnaround") targetDirection = direction + 180;
+    }
+    else if (place_meeting(nextx, nexty, obj_couch))
+    {
+        speed = 0;
+        if (obj_event_obshit_couch.associatedAction == "turnleft") targetDirection = direction + 90;
+        else if (obj_event_obshit_couch.associatedAction == "turnright") targetDirection = direction - 90;
+        else if (obj_event_obshit_couch.associatedAction == "turnaround") targetDirection = direction + 180;
+    }
 }
 </string>
           </argument>
