@@ -130,6 +130,13 @@ else
         else if (obj_event_obshit_couch.associatedAction == "turnright") targetDirection = direction - 90;
         else if (obj_event_obshit_couch.associatedAction == "turnaround") targetDirection = direction + 180;
     }
+    else if (place_meeting(nextx, nexty, obj_plant))
+    {
+        speed = 0;
+        if (obj_event_obshit_plant.associatedAction == "turnleft") targetDirection = direction + 90;
+        else if (obj_event_obshit_plant.associatedAction == "turnright") targetDirection = direction - 90;
+        else if (obj_event_obshit_plant.associatedAction == "turnaround") targetDirection = direction + 180;
+    }
 }
 </string>
           </argument>
