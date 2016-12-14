@@ -43,6 +43,7 @@
       <object>objects\obj_event_wallhit_default</object>
       <object>objects\obj_event_wallhit_red</object>
       <object>objects\obj_event_obshit_couch</object>
+      <object>objects\obj_event_movestart</object>
     </objects>
     <object>objects\obj_floor</object>
     <object>objects\obj_controller_room</object>
