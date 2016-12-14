@@ -42,7 +42,6 @@
       <object>objects\obj_wall_red</object>
       <object>objects\obj_wall_green</object>
       <object>objects\obj_wall_blue</object>
-      <object>objects\object15</object>
     </objects>
     <objects name="room obstacles">
       <object>objects\obj_couch</object>
@@ -54,6 +53,8 @@
       <object>objects\obj_action_turnaround</object>
       <object>objects\obj_event_wallhit_default</object>
       <object>objects\obj_event_wallhit_red</object>
+      <object>objects\obj_event_wallhit_green</object>
+      <object>objects\obj_event_wallhit_blue</object>
       <object>objects\obj_event_obshit_couch</object>
       <object>objects\obj_event_movestart</object>
     </objects>

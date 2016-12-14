@@ -109,6 +109,20 @@ else
         else if (obj_event_wallhit_red.associatedAction == "turnright") targetDirection = direction - 90;
         else if (obj_event_wallhit_red.associatedAction == "turnaround") targetDirection = direction + 180;
     }
+    else if (place_meeting(nextx, nexty, obj_wall_green) || collidingWallColor == c_green)
+    {
+        speed = 0;
+        if (obj_event_wallhit_green.associatedAction == "turnleft") targetDirection = direction + 90;
+        else if (obj_event_wallhit_green.associatedAction == "turnright") targetDirection = direction - 90;
+        else if (obj_event_wallhit_green.associatedAction == "turnaround") targetDirection = direction + 180;
+    }
+    else if (place_meeting(nextx, nexty, obj_wall_blue) || collidingWallColor == c_blue)
+    {
+        speed = 0;
+        if (obj_event_wallhit_blue.associatedAction == "turnleft") targetDirection = direction + 90;
+        else if (obj_event_wallhit_blue.associatedAction == "turnright") targetDirection = direction - 90;
+        else if (obj_event_wallhit_blue.associatedAction == "turnaround") targetDirection = direction + 180;
+    }
     else if (place_meeting(nextx, nexty, obj_couch))
     {
         speed = 0;
