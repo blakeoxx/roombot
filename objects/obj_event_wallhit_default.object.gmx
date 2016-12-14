@@ -28,14 +28,8 @@
             <string>draw_set_color(c_aqua);
 draw_set_font(font_roomgui);
 
-// Draw events to room
-var eventText = "";
-//if ()
-
-draw_text_ext(704, 64, eventText, -1, room_width-704);
-
-// Draw actions to room
-
+draw_text(x, y, "Hit Default Wall");
+draw_rectangle(x, y+64, x+128, y+128);
 </string>
           </argument>
         </arguments>

@@ -18,8 +18,8 @@ global.actionsTurnAround = 5</code>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1313</w>
-    <h>962</h>
+    <w>1289</w>
+    <h>953</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
