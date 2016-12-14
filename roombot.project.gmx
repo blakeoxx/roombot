@@ -10,21 +10,29 @@
     <sprites name="room assets">
       <sprite>sprites\spr_couch</sprite>
       <sprite>sprites\spr_plant</sprite>
+      <sprite>sprites\spr_wall_default</sprite>
       <sprite>sprites\spr_wall_red</sprite>
       <sprite>sprites\spr_wall_green</sprite>
       <sprite>sprites\spr_wall_blue</sprite>
       <sprite>sprites\spr_floor</sprite>
-      <sprite>sprites\spr_wall_default</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\font_roomgui</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_robot</object>
     <objects name="walls">
+      <object>objects\obj_wall_default</object>
       <object>objects\obj_wall_red</object>
-      <object>objects\object2</object>
     </objects>
+    <objects name="room obstacles">
+      <object>objects\obj_couch</object>
+    </objects>
+    <object>objects\obj_floor</object>
+    <object>objects\obj_controller_room</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_level0</room>
