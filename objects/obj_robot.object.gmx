@@ -84,14 +84,25 @@ else
     else if (direction == 180) nextx -= speed;
     else nexty += speed;
     
+    collidingWallColor = undefined;
     if (place_meeting(nextx, nexty, obj_wall_default))
     {
-        speed = 0;
-        if (obj_event_wallhit_default.associatedAction == "turnleft") targetDirection = direction + 90;
-        else if (obj_event_wallhit_default.associatedAction == "turnright") targetDirection = direction - 90;
-        else if (obj_event_wallhit_default.associatedAction == "turnaround") targetDirection = direction + 180;
+        collidingWall = instance_place(nextx, nexty, obj_wall_default);
+        if (collidingWall.corner != "default")
+        {
+            if (direction == 0 || direction == 180) collidingWallColor = collidingWall.vertSideColor;
+            else if (direction == 90 || direction == 270) collidingWallColor = collidingWall.horizSideColor;
+        }
+        else
+        {
+            speed = 0;
+            if (obj_event_wallhit_default.associatedAction == "turnleft") targetDirection = direction + 90;
+            else if (obj_event_wallhit_default.associatedAction == "turnright") targetDirection = direction - 90;
+            else if (obj_event_wallhit_default.associatedAction == "turnaround") targetDirection = direction + 180;
+        }
     }
-    else if (place_meeting(nextx, nexty, obj_wall_red))
+    
+    if (place_meeting(nextx, nexty, obj_wall_red) || collidingWallColor == c_red)
     {
         speed = 0;
         if (obj_event_wallhit_red.associatedAction == "turnleft") targetDirection = direction + 90;
