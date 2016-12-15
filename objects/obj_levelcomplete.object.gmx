@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-12312312</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -66,43 +66,44 @@ else if (floorTileCountPercentage &gt; array[2]) numStars = 3;
             <kind>1</kind>
             <string>draw_set_font(font_roomgui);
 draw_set_colour(c_black);
-draw_rectangle(x, y, x + 400, y + 300, false);
+draw_rectangle(x, y, x + 500, y + 300, false);
 
 //if the level was not beaten
 if (numStars == 0) {
-    draw_text(x, y, "Hit Plant");
     text = "Still a dirty room :(";
-    draw_sprite(spr_star, 0, x, y + 64);
-    draw_sprite(spr_star, 0, x + 64, y + 64);
-    draw_sprite(spr_star, 0, x + 128, y + 64);
+    draw_sprite(spr_star, 0, x + 30, y + 60);
+    draw_sprite(spr_star, 0, x + 94, y + 60);
+    draw_sprite(spr_star, 0, x + 158, y + 60);
 }
 
 //1 star
 if (numStars == 1) {
     text = "Clean enough for government work";
-    draw_sprite(spr_star, 1, x, y + 64);
-    draw_sprite(spr_star, 0, x + 64, y + 64);
-    draw_sprite(spr_star, 0, x + 128, y + 64);
+    draw_sprite(spr_star, 1, x, y + 74);
+    draw_sprite(spr_star, 0, x + 64, y + 74);
+    draw_sprite(spr_star, 0, x + 128, y + 74);
 }
 
 //2 stars
 if (numStars == 2) {
     text = "Clean as a (mostly clean) whistle!";
-    draw_sprite(spr_star, 1, x, y + 64);
-    draw_sprite(spr_star, 1, x + 64, y + 64);
-    draw_sprite(spr_star, 0, x + 128, y + 64);
+    draw_sprite(spr_star, 1, x, y + 74);
+    draw_sprite(spr_star, 1, x + 64, y + 74);
+    draw_sprite(spr_star, 0, x + 128, y + 74);
 }
 
 //3 stars
 if (numStars == 3) {
     text = "Spotless!";
-    draw_sprite(spr_star, 1, x, y + 64);
-    draw_sprite(spr_star, 1, x + 64, y + 64);
-    draw_sprite(spr_star, 1, x + 128, y + 64);
+    draw_sprite(spr_star, 1, x, y + 74);
+    draw_sprite(spr_star, 1, x + 64, y + 74);
+    draw_sprite(spr_star, 1, x + 128, y + 74);
 }
 
 draw_set_color(c_aqua);
-draw_text(x, y, text);
+draw_text(x + 30, y + 30, text);
+draw_text(x + 30, y + 128, "Press Spacebar for Next Level");
+draw_text(x + 30, y + 172, "Press 'R' to Restart");
 </string>
           </argument>
         </arguments>
