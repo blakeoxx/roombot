@@ -15,12 +15,14 @@
       <sprite>sprites\spr_wall_green</sprite>
       <sprite>sprites\spr_wall_blue</sprite>
       <sprite>sprites\spr_floor</sprite>
+      <sprite>sprites\spr_floor_curve</sprite>
       <sprite>sprites\spr_corner_sides</sprite>
     </sprites>
     <sprites name="room gui">
       <sprite>sprites\spr_turnleft</sprite>
       <sprite>sprites\spr_turnright</sprite>
       <sprite>sprites\spr_turnaround</sprite>
+      <sprite>sprites\spr_star</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -61,6 +63,7 @@
       <object>objects\obj_hud_buildtime</object>
       <object>objects\obj_hud_runtime</object>
       <object>objects\obj_hud_cleanamt</object>
+      <object>objects\obj_levelcomplete</object>
     </objects>
     <object>objects\obj_floor</object>
     <object>objects\obj_controller_room</object>
@@ -72,6 +75,7 @@
       <room>rooms\level2</room>
       <room>rooms\level3</room>
       <room>rooms\level4</room>
+      <room>rooms\level5</room>
       <room>rooms\level_def</room>
     </rooms>
     <room>rooms\room_walltest</room>

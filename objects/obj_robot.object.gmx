@@ -60,7 +60,11 @@ turnSpeed = 10;
     targetDirection = direction;
     speed = 0;
 }
-else if (!obj_controller_room.moveStopped &amp;&amp; direction != targetDirection)
+else if (obj_controller_room.moveStopped) {
+    speed = 0;
+    image_speed = 0;
+}
+else if (direction != targetDirection)
 {
     speed = 0;
     if (abs(direction - targetDirection) &lt;= turnSpeed)
@@ -74,7 +78,7 @@ else if (!obj_controller_room.moveStopped &amp;&amp; direction != targetDirectio
     else if (targetDirection &gt; direction) direction += turnSpeed;
     else if (targetDirection &lt; direction) direction -= turnSpeed;
 }
-else if (!obj_controller_room.moveStopped)
+else
 {
     speed = moveSpeed;
     nextx = x;
@@ -93,16 +97,16 @@ else if (!obj_controller_room.moveStopped)
             if (direction == 0 || direction == 180) collidingWallColor = collidingWall.vertSideColor;
             else if (direction == 90 || direction == 270) collidingWallColor = collidingWall.horizSideColor;
         }
-        else
-        {
-            speed = 0;
-            if (obj_event_wallhit_default.associatedAction == "turnleft") targetDirection = direction + 90;
-            else if (obj_event_wallhit_default.associatedAction == "turnright") targetDirection = direction - 90;
-            else if (obj_event_wallhit_default.associatedAction == "turnaround") targetDirection = direction + 180;
-        }
     }
     
-    if (place_meeting(nextx, nexty, obj_wall_red) || collidingWallColor == c_red)
+    if ((place_meeting(nextx, nexty, obj_wall_default) &amp;&amp; collidingWall.corner == "default") || collidingWallColor == c_white)
+    {
+        speed = 0;
+        if (obj_event_wallhit_default.associatedAction == "turnleft") targetDirection = direction + 90;
+        else if (obj_event_wallhit_default.associatedAction == "turnright") targetDirection = direction - 90;
+        else if (obj_event_wallhit_default.associatedAction == "turnaround") targetDirection = direction + 180;
+    }
+    else if (place_meeting(nextx, nexty, obj_wall_red) || collidingWallColor == c_red)
     {
         speed = 0;
         if (obj_event_wallhit_red.associatedAction == "turnleft") targetDirection = direction + 90;

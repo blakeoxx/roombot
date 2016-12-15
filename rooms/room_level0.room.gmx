@@ -53,7 +53,6 @@ global.actionsTurnAround = 5;</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_floor" x="256" y="320" name="inst_8CB8AD75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_robot" x="288" y="352" name="inst_10AF55A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_controller_room" x="0" y="0" name="inst_DC37B44D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_action_turnleft" x="0" y="704" name="inst_7BACED58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
