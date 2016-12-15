@@ -58,6 +58,9 @@
       <object>objects\obj_event_obshit_couch</object>
       <object>objects\obj_event_obshit_plant</object>
       <object>objects\obj_event_movestart</object>
+      <object>objects\obj_hud_buildtime</object>
+      <object>objects\obj_hud_runtime</object>
+      <object>objects\obj_hud_cleanamt</object>
     </objects>
     <object>objects\obj_floor</object>
     <object>objects\obj_controller_room</object>
