@@ -10,16 +10,16 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>global.actionsTurnLeft = 5
-global.actionsTurnRight = 5
-global.actionsTurnAround = 5</code>
+  <code>global.actionsTurnLeft = 5;
+global.actionsTurnRight = 5;
+global.actionsTurnAround = 5;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1020</w>
-    <h>647</h>
+    <w>1016</w>
+    <h>600</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>

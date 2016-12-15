@@ -49,13 +49,13 @@
           <argument>
             <kind>1</kind>
             <string>
-if (collision_point( x + 32, y + 32, obj_robot, true, true)) {
+if (!isClean &amp;&amp; collision_point( x + 32, y + 32, obj_robot, true, true)) {
 //if (place_meeting(x, y, obj_robot)) {
     isClean = true;
     obj_hud_cleanamt.cleanCount++;
 }
 
-if ((isClean == true) &amp;&amp; (image_alpha &gt; 0)) {
+if (isClean &amp;&amp; image_alpha &gt; 0) {
     image_alpha -= 0.05;
 }
 </string>

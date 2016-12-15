@@ -60,7 +60,7 @@ turnSpeed = 10;
     targetDirection = direction;
     speed = 0;
 }
-else if (direction != targetDirection)
+else if (!obj_controller_room.moveStopped &amp;&amp; direction != targetDirection)
 {
     speed = 0;
     if (abs(direction - targetDirection) &lt;= turnSpeed)
@@ -74,7 +74,7 @@ else if (direction != targetDirection)
     else if (targetDirection &gt; direction) direction += turnSpeed;
     else if (targetDirection &lt; direction) direction -= turnSpeed;
 }
-else
+else if (!obj_controller_room.moveStopped)
 {
     speed = moveSpeed;
     nextx = x;
