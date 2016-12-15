@@ -64,6 +64,13 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room3</room>
+    <rooms name="Game Levels">
+      <room>rooms\level1</room>
+      <room>rooms\level2</room>
+      <room>rooms\level3</room>
+      <room>rooms\level4</room>
+      <room>rooms\level_def</room>
+    </rooms>
     <room>rooms\room_walltest</room>
     <room>rooms\room_level0</room>
     <room>rooms\room_prev</room>

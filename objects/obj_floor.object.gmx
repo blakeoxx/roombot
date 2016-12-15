@@ -48,7 +48,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (place_meeting(x + 32, y + 32, obj_robot)) {
+            <string>
+if (collision_point( x + 32, y + 32, obj_robot, true, true)) {
+//if (place_meeting(x, y, obj_robot)) {
     isClean = true;
 }
 
