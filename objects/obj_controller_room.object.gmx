@@ -103,7 +103,7 @@ draw_set_font(font_roomgui);
 
 // Add events to the room
 eventListX = 1280;
-eventListY = 128;
+eventListY = 64;
 eventCount = 0;
 instance_create(eventListX, eventListY+(eventCount*96), obj_event_movestart);
 eventCount++;
@@ -148,14 +148,14 @@ for (tileX = 0; tileX &lt; 1280; tileX += 64) {
 }
 
 // Add HUD elements to the room
-hudListX = 1280;
+hudListX = 1024;
 hudListY = 640;
 hudCount = 0;
-instance_create(hudListX, hudListY+(hudCount*96), obj_hud_buildtime);
+instance_create(hudListX, hudListY+(hudCount*64), obj_hud_buildtime);
 hudCount++;
-instance_create(hudListX, hudListY+(hudCount*96), obj_hud_runtime);
+instance_create(hudListX, hudListY+(hudCount*64), obj_hud_runtime);
 hudCount++;
-instance_create(hudListX, hudListY+(hudCount*96), obj_hud_cleanamt);
+instance_create(hudListX, hudListY+(hudCount*64), obj_hud_cleanamt);
 hudCount++;
 </string>
           </argument>

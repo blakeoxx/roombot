@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>startingDirection = "up";
 targetDirection = 0;
+workingDirection = 0;
 moveSpeed = 5;
 turnSpeed = 10;
 </string>
@@ -66,32 +67,37 @@ else if (obj_controller_room.moveStopped) {
 }
 else if (direction != targetDirection)
 {
+    // Clip the object to the tile set
+    x = (x-(x%32))+(round((x%32)/32)*32);
+    y = (y-(y%32))+(round((y%32)/32)*32);
+    
     speed = 0;
-    if (abs(direction - targetDirection) &lt;= turnSpeed)
+    if (abs(workingDirection - targetDirection) &lt;= turnSpeed)
     {
         // Normalize the target direction
         targetDirection = targetDirection % 360;
         if (targetDirection &lt; 0) targetDirection += 360;
         
-        direction = targetDirection;
+        workingDirection = targetDirection;
     }
-    else if (targetDirection &gt; direction) direction += turnSpeed;
-    else if (targetDirection &lt; direction) direction -= turnSpeed;
+    else if (targetDirection &gt; workingDirection) workingDirection += turnSpeed;
+    else if (targetDirection &lt; workingDirection) workingDirection -= turnSpeed;
+    direction = workingDirection;
 }
 else
 {
     speed = moveSpeed;
     nextx = x;
     nexty = y;
-    if (direction == 0) nextx += speed;
-    else if (direction == 90) nexty -= speed;
-    else if (direction == 180) nextx -= speed;
-    else nexty += speed;
+    if (direction == 0) nextx += 33;
+    else if (direction == 90) nexty -= 33;
+    else if (direction == 180) nextx -= 33;
+    else nexty += 33;
     
     collidingWallColor = undefined;
-    if (place_meeting(nextx, nexty, obj_wall_default))
+    if (position_meeting(nextx, nexty, obj_wall_default))
     {
-        collidingWall = instance_place(nextx, nexty, obj_wall_default);
+        collidingWall = instance_position(nextx, nexty, obj_wall_default);
         if (collidingWall.corner != "default")
         {
             if (direction == 0 || direction == 180) collidingWallColor = collidingWall.vertSideColor;
@@ -99,44 +105,50 @@ else
         }
     }
     
-    if ((place_meeting(nextx, nexty, obj_wall_default) &amp;&amp; collidingWall.corner == "default") || collidingWallColor == c_white)
+    if (position_meeting(nextx, nexty, obj_wall_red) || collidingWallColor == c_red)
     {
         speed = 0;
-        if (obj_event_wallhit_default.associatedAction == "turnleft") targetDirection = direction + 90;
-        else if (obj_event_wallhit_default.associatedAction == "turnright") targetDirection = direction - 90;
-        else if (obj_event_wallhit_default.associatedAction == "turnaround") targetDirection = direction + 180;
-    }
-    else if (place_meeting(nextx, nexty, obj_wall_red) || collidingWallColor == c_red)
-    {
-        speed = 0;
+        workingDirection = direction;
         if (obj_event_wallhit_red.associatedAction == "turnleft") targetDirection = direction + 90;
         else if (obj_event_wallhit_red.associatedAction == "turnright") targetDirection = direction - 90;
         else if (obj_event_wallhit_red.associatedAction == "turnaround") targetDirection = direction + 180;
     }
-    else if (place_meeting(nextx, nexty, obj_wall_green) || collidingWallColor == c_green)
+    else if (position_meeting(nextx, nexty, obj_wall_green) || collidingWallColor == c_green)
     {
         speed = 0;
+        workingDirection = direction;
         if (obj_event_wallhit_green.associatedAction == "turnleft") targetDirection = direction + 90;
         else if (obj_event_wallhit_green.associatedAction == "turnright") targetDirection = direction - 90;
         else if (obj_event_wallhit_green.associatedAction == "turnaround") targetDirection = direction + 180;
     }
-    else if (place_meeting(nextx, nexty, obj_wall_blue) || collidingWallColor == c_blue)
+    else if (position_meeting(nextx, nexty, obj_wall_blue) || collidingWallColor == c_blue)
     {
         speed = 0;
+        workingDirection = direction;
         if (obj_event_wallhit_blue.associatedAction == "turnleft") targetDirection = direction + 90;
         else if (obj_event_wallhit_blue.associatedAction == "turnright") targetDirection = direction - 90;
         else if (obj_event_wallhit_blue.associatedAction == "turnaround") targetDirection = direction + 180;
     }
-    else if (place_meeting(nextx, nexty, obj_couch))
+    else if ((position_meeting(nextx, nexty, obj_wall_default) &amp;&amp; collidingWall.corner == "default") || collidingWallColor == c_white)
     {
         speed = 0;
+        workingDirection = direction;
+        if (obj_event_wallhit_default.associatedAction == "turnleft") targetDirection = direction + 90;
+        else if (obj_event_wallhit_default.associatedAction == "turnright") targetDirection = direction - 90;
+        else if (obj_event_wallhit_default.associatedAction == "turnaround") targetDirection = direction + 180;
+    }
+    else if (position_meeting(nextx, nexty, obj_couch))
+    {
+        speed = 0;
+        workingDirection = direction;
         if (obj_event_obshit_couch.associatedAction == "turnleft") targetDirection = direction + 90;
         else if (obj_event_obshit_couch.associatedAction == "turnright") targetDirection = direction - 90;
         else if (obj_event_obshit_couch.associatedAction == "turnaround") targetDirection = direction + 180;
     }
-    else if (place_meeting(nextx, nexty, obj_plant))
+    else if (position_meeting(nextx, nexty, obj_plant))
     {
         speed = 0;
+        workingDirection = direction;
         if (obj_event_obshit_plant.associatedAction == "turnleft") targetDirection = direction + 90;
         else if (obj_event_obshit_plant.associatedAction == "turnright") targetDirection = direction - 90;
         else if (obj_event_obshit_plant.associatedAction == "turnaround") targetDirection = direction + 180;
