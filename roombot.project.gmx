@@ -33,9 +33,12 @@
     <script>scripts\scr_wall_sprite.gml</script>
     <script>scripts\scr_corner_color_check.gml</script>
     <script>scripts\scr_corner_draw.gml</script>
+    <script>scripts\scr_draw_text_centered.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_roomgui</font>
+    <font>fonts\font_mainmenu_title</font>
+    <font>fonts\font_mainmenu_instructions</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_robot</object>
@@ -67,20 +70,25 @@
     </objects>
     <object>objects\obj_floor</object>
     <object>objects\obj_controller_room</object>
+    <object>objects\obj_controller_globals</object>
+    <object>objects\obj_mainmenu</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room3</room>
+    <room>rooms\room_mainmenu</room>
     <rooms name="Game Levels">
-      <room>rooms\level1</room>
-      <room>rooms\level2</room>
-      <room>rooms\level3</room>
-      <room>rooms\level4</room>
-      <room>rooms\level5</room>
-      <room>rooms\level_def</room>
+      <room>rooms\room_level1</room>
+      <room>rooms\room_level2</room>
+      <room>rooms\room_level3</room>
+      <room>rooms\room_level4</room>
+      <room>rooms\room_level5</room>
+      <room>rooms\room_level_template</room>
     </rooms>
-    <room>rooms\room_walltest</room>
-    <room>rooms\room_level0</room>
-    <room>rooms\room_prev</room>
+    <rooms name="Debug">
+      <room>rooms\room_room3</room>
+      <room>rooms\room_walltest</room>
+      <room>rooms\room_level0</room>
+      <room>rooms\room_prev</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
